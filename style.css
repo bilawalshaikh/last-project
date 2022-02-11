@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
   }
@@ -30,16 +30,14 @@
 #nav ul li a{
     color: var(--main-white);
     text-decoration: none;
-    /* justify-content: space-between; */
-    /* display: block;
-    
-    padding: 2rem; */
     font-size: 1.5rem;
 }
 #nav ul li a:hover{
     background-color: var(--main-blue);
 padding: 27px;
 }
+
+/*
  #welcome-section{
 background-color: var(--main-gray);
 display: flex;
@@ -65,7 +63,6 @@ font-weight: bolder;
    
     #projects{
         background-color: var(--main-blue);
-        /* max-width: 100%; */
 
     }
    #projects > h2{
@@ -79,116 +76,103 @@ font-weight: bolder;
         padding-top:100px;
     }
 
-    .projects-flex{
-        display: flex;
-        flex-direction: row ;
-        flex-wrap: wrap;
-    }
+    
 
-
-    .projects-flex .child{
-        padding: 30px;
-        }
- 
-/* 
-@media (max-width:730px){
-
-    .projects-flex{
-
-        flex-direction: column ;
-       
-    }
-    .projects-flex .child{
-        flex: 1;
-        padding: 20px;
-        flex-wrap: wrap;
-                }
-}  */
-
-
-.project-title{
-    background-color: var(--main-gray);
-    color: white;
-    text-align: center;
-    width: 93%;
-    padding: 15px;
-}
-.btn{
-    color: white;
-    padding: 20px;
-    background-color: #303841;
-    border: 2px solid  #303841;
-    text-decoration: none;
-    margin-left: 30px;
-    /* display: flex; */
-    /* flex-direction: row; */
-    justify-content: center;
+img{
+  width: 500px;
 
 }
+.div-imgs{
+  background-color: #303841;
+  width: 400px;
+  height: 400px;
 
-
- /* .project-title{
-    background-color: var(--main-gray);
-    color: white;
-    text-align: center;
-    padding: 15px;
 }
-.code{
-    display: none;
-}
-
-.code:hover{
-    display: block;
-    background-color: #be3144;
+.projects-flex{
+  display: flex;
+  flex-direction: row ;
 
 } */
 
 
-.contact-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 80vh;
-    padding: 0 2rem;
-    background: var(--main-gray);
+
+body {
+  margin: 0px;
+}
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flex-item{
+   /* 
+   All you need to do this play with this number (343) according to aviable width and item width 
+   Formula: (ParentWidth / 3) - margin (ParentWidth divide by 3 subtracte by margin[if you want e.g in my case i set 10] )
+   
+   Stackoverflow Run Code Snippet width = 633.82px (not sure)
+   Margin = 10px
+   
+   */
+   flex: 0 0 192px; /* play with this number */
+   margin: 10px;
+}
+/* a{
+  width: 100%;
+} */
+a > img {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  /* margin-top: 200px; */
+}
+.project-title{
+  text-align: center;
+  background-color: #303841;
+  color: white;
+  padding: 15px;
+}
+.cen{
+  justify-self: center !important;
+}
+
+
+
+#welcome-section{
+  background-color: var(--main-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
   }
   
-  .contact-section-header > h2 {
-    font-size: 3rem;
-    color: white;
+  #welcome-section h1{
+  color: var(--main-white);
+  font-size: 3rem;
+  font-weight: bolder;
   }
   
-  @media (max-width: 28.75em) {
-    .contact-section-header > h2 {
-      font-size: 4rem;
-    }
-  }
+  #welcome-section p{
+      color: var(--main-red);
+      font-weight: 300;
+      font-size: 2rem;
+      font-style: italic;
+      }
+     
+      #projects{
+          background-color: var(--main-blue);
   
-  .contact-section-header > p {
-    font-style: italic;
-    color: gray;
-    padding-top: 20px;
-  }
+      }
+     #projects > h2{
+         border-bottom: 3px solid white;
+         font-size: 2.5rem;
+         color: var(--main-white);
+         text-align: center;
+          max-width: 640px;
+          margin: 0 auto 6rem auto;
+          border-bottom: 0.2rem solid var(--main-white);
+          padding-top:100px;
+      }
   
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-  }
-  
-  .contact-details {
-    font-size: 2.4rem;
-    text-shadow: 2px 2px 1px #1f1f1f;
-    transition: transform 0.3s ease-out;
-  }
-  
-  .contact-details:hover {
-    transform: translateY(8px);
-  }
- 
+   
