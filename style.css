@@ -5,7 +5,7 @@ flex: <'flex-grow'> <'flex-basis'> /* Two values syntax, variation 1 */
 flex: <'flex-grow'> <'flex-shrink'> /* Two values syntax, variation 2 */
 flex: <'flex-grow'> <'flex-shrink'> <'flex-basis'> /* Three values syntax */
 flex: inherit */
-
+/* https://css-tricks.com/almanac/properties/f/flex/ */
 
 
 
