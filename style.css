@@ -1,4 +1,15 @@
- * {
+/* flex: none /* value 'none' case */
+flex: <'flex-grow'> /* One value syntax, variation 1 */
+flex: <'flex-basis'> /* One value syntax, variation 2 */
+flex: <'flex-grow'> <'flex-basis'> /* Two values syntax, variation 1 */
+flex: <'flex-grow'> <'flex-shrink'> /* Two values syntax, variation 2 */
+flex: <'flex-grow'> <'flex-shrink'> <'flex-basis'> /* Three values syntax */
+flex: inherit */
+
+
+
+
+* {
     margin: 0;
     padding: 0;
   }
