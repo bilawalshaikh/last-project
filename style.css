@@ -187,3 +187,239 @@ a > img {
       }
   
    
+
+
+Let's say a triple (a, b, c) is a zigzag if either a < b > c or a > b < c.
+
+Given an array of integers numbers, your task is to check all the triples of its consecutive elements for being a zigzag. More formally, your task is to construct an array of length numbers.length - 2, where the ith element of the output array equals 1 if the triple (numbers[i], numbers[i + 1], numbers[i + 2]) is a zigzag, and 0 otherwise.
+
+Example
+
+For numbers = [1, 2, 1, 3, 4], the output should be solution(numbers) = [1, 1, 0].
+
+(numbers[0], numbers[1], numbers[2]) = (1, 2, 1) is a zigzag, because 1 < 2 > 1;
+(numbers[1], numbers[2] , numbers[3]) = (2, 1, 3) is a zigzag, because 2 > 1 < 3;
+(numbers[2], numbers[3] , numbers[4]) = (1, 3, 4) is not a zigzag, because 1 < 3 < 4;
+For numbers = [1, 2, 3, 4], the output should be solution(numbers) = [0, 0];
+
+Since all the elements of numbers are increasing, there are no zigzags.
+
+For numbers = [1000000000, 1000000000, 1000000000], the output should be solution(numbers) = [0].
+
+Since all the elements of numbers are the same, there are no zigzags.
+
+Input/Output
+
+[execution time limit] 4 seconds (js)
+
+[input] array.integer numbers
+
+An array of integers.
+
+Guaranteed constraints:
+3 ≤ numbers.length ≤ 100,
+1 ≤ numbers[i] ≤ 109.
+
+[output] array.integer
+
+Return an array, where the ith element equals 1 if the triple (numbers[i], numbers[i + 1], numbers[i + 2]) is a zigzag, and 0 otherwise.
+
+[JavaScript] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+function helloWorld(name) {
+    console.log("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+
+
+
+///2
+
+Given two strings s and t, both consisting of lowercase English letters and digits, your task is to calculate how many ways exactly one digit could be removed from one of the strings so that s is lexicographically smaller than t after the removal. Note that we are removing only a single instance of a single digit, rather than all instances (eg: removing 1 from the string a11b1c could result in a1b1c or a11bc, but not abc).
+
+Also note that digits are considered lexicographically smaller than letters.
+
+Example
+
+For s = "ab12c" and t = "1zz456", the output should be solution(s, t) = 1.
+
+Here are all the possible removals:
+
+We can remove the first digit from s, obtaining "ab2c". "ab2c" > "1zz456", so we don't count this removal
+We can remove the second digit from s, obtaining "ab1c". "ab1c" > "1zz456", so we don't count this removal
+We can remove the first digit from t, obtaining "zz456". "ab12c" < "zz456", so we count this removal
+We can remove the second digit from t, obtaining "1zz56". "ab12c" > "1zz56", so we don't count this removal
+We can remove the third digit from t, obtaining "1zz46". "ab12c" > "1zz46", so we don't count this removal
+We can remove the fourth digit from t, obtaining "1zz45". "ab12c" > "1zz45", so we don't count this removal
+The only valid case where s < t after removing a digit is "ab12c" < "zz456". Therefore, the answer is 1.
+
+For s = "ab12c" and t = "ab24z", the output should be solution(s, t) = 3.
+
+There are 4 possible ways of removing the digit:
+
+"ab1c" < "ab24z"
+"ab2c" > "ab24z"
+"ab12c" < "ab4z"
+"ab12c" < "ab2z"
+Three of these cases match the requirement that s < t, so the answer is 3.
+
+Input/Output
+
+[execution time limit] 4 seconds (js)
+
+[input] string s
+
+A string consisting of lowercase English letters and digits 0..9.
+
+Guaranteed constraints:
+1 ≤ s.length ≤ 103.
+
+[input] string t
+
+A string consisting of lowercase English letters and digits 0..9.
+
+Guaranteed constraints:
+1 ≤ t.length ≤ 103.
+
+[output] integer
+
+The number of ways to remove exactly one digit from one of the strings so that s is lexicographically smaller than t after the removal.
+
+[JavaScript] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+function helloWorld(name) {
+    console.log("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+
+//3
+
+Given a matrix of integers, we'd like to consider the sum of the elements within the area of a 45° rotated rectangle. More formally, the area is bounded by two diagonals parallel to the main diagonal and two diagonals parallel to the secondary diagonal. The dimensions of the rotated rectangle are defined by the number of elements along the borders of the rectangle.
+
+dimensions
+
+Given integers a and b representing the dimensions of the rotated rectangle, and matrix (a matrix of integers), your task is to find the greatest sum of integers contained within an a x b rotated rectangle.
+
+Note: The order of the dimensions is not important - consider all a x b and b x a rectangles.
+
+Example
+
+For
+
+matrix = [[1, 2, 3, 4, 0],
+          [5, 6, 7, 8, 1],
+          [3, 2, 4, 1, 4],
+          [4, 3, 5, 1, 6]]
+a = 2, and b = 3, the output should be solution(matrix, a, b) = 36.
+
+example 1
+
+For
+
+matrix = [[-2, 3, 5, -1],
+          [4, 3, -10, 10]]
+a = 1, and b = 1, the output should be solution(matrix, a, b) = 10.
+
+example 2
+
+The rotated rectangle with dimensions 1x1 is just one element, so the answer is the maximal element in matrix.
+
+For
+
+matrix = [[-2, 3],
+          [4, 3]]
+a = 1, and b = 2, the output should be solution(matrix, a, b) = 7.
+
+example 3
+
+Input/Output
+
+[execution time limit] 4 seconds (js)
+
+[input] array.array.integer matrix
+
+A matrix of integers.
+
+Guaranteed constraints:
+1 ≤ matrix.length, matrix[i].length ≤ 50,
+-103 ≤ matrix[i][j] ≤ 103.
+
+[input] integer a
+
+The first rotated rectangle dimension.
+
+Guaranteed constraints:
+1 ≤ a ≤ 25.
+
+[input] integer b
+
+The second rotated rectangle dimension.
+It's guaranteed that at least one rotated rectangle will fit in the given matrix.
+
+Guaranteed constraints:
+a ≤ b ≤ 25.
+
+[output] integer
+
+The maximal sum of elements of a rotated rectangle with dimensions a and b.
+
+[JavaScript] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+function helloWorld(name) {
+    console.log("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+
+
+
+//4
+
+You are given an array of integers arr. Your task is to count the number of contiguous subarrays, such that elements of the subarray are arranged in strictly decreasing order.
+
+For example, if arr = [9, 8, 4, 9, 3], then the subarray [9, 8, 4] meets the criteria (9 > 8 > 4), but the subarray [8, 4, 9] does not.
+
+Example
+
+For arr = [9, 8, 7, 6, 5], the output should be solution(arr) = 15.
+
+All contiguous subarrays satisfy the condition of problem, because all elements of the array are arranged in decreasing order. There are 15 possible contiguous subarrays, so the answer is 15.
+
+For arr = [10, 10, 10], the output should be solution(arr) = 3.
+
+Since all of the elements are equal, the subarrays can't be in strictly decreasing order unless they contain only one element. There are 3 possible subarrays containing one element, so the answer is 3.
+
+Input/Output
+
+[execution time limit] 4 seconds (js)
+
+[input] array.integer arr
+
+An array of integers.
+
+Guaranteed constraints:
+1 ≤ arr.length ≤ 105,
+-109 ≤ arr[i] ≤ 109.
+
+[output] integer64
+
+Return the number of contiguous subarrays with elements in strictly decreasing order.
+
+[JavaScript] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+function helloWorld(name) {
+    console.log("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+
+
+
+
+
